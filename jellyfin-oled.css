@@ -1,0 +1,74 @@
+/* Jellyfin OLED
+   Base: Scyfin OLED
+   Accent: Purple-dominant with blue sparks
+   Rituals: proud card glow, gradient bars, no bubbles, shimmer hover
+*/
+
+/* === Base Scyfin OLED === */
+@import url("https://cdn.jsdelivr.net/gh/loof2736/scyfin@latest/CSS/scyfin-theme.css");
+@import url("https://cdn.jsdelivr.net/gh/loof2736/scyfin@latest/CSS/theme-oled.css");
+
+/* === Palette: Purple-dominant with Blue Spark === */
+:root {
+    --accent-color: #8a4dff !important;       /* vivid violet */
+    --accent-color-light: #b38cff !important; /* lavender */
+    --accent-color-dark: #1a0f33 !important;  /* deep indigo */
+}
+
+/* === Card Hover Glow (proud but not overpowering) === */
+.cardOverlayContainer {
+    box-shadow: 0 0 18px rgba(138, 77, 255, 0.55),
+                0 0 8px rgba(77, 166, 255, 0.35) !important;
+    transition: box-shadow 0.25s ease;
+}
+
+/* === Progress + Volume Bars (gradient override) === */
+.progressbarForeground,
+.sliderForeground,
+.mdl-slider-background-lower,
+.mdl-slider-background-upper {
+    background: linear-gradient(90deg, #8a4dff, #4da6ff) !important;
+    border: none !important;
+}
+
+/* Slider thumb styling */
+.mdl-slider::-webkit-slider-thumb {
+    background-color: #8a4dff !important;
+    box-shadow: 0 0 6px rgba(138, 77, 255, 0.6) !important;
+}
+.mdl-slider::-moz-range-thumb {
+    background-color: #8a4dff !important;
+    box-shadow: 0 0 6px rgba(138, 77, 255, 0.6) !important;
+}
+
+/* === Titles === */
+.itemName {
+    font-weight: 700 !important;
+    color: #d1b3ff !important;
+    text-shadow: 0 0 4px rgba(138, 77, 255, 0.5);
+}
+
+/* === Navigation Bar === */
+.mainDrawer,
+.skinHeader {
+    background: rgba(0, 0, 0, 0.85) !important;
+    box-shadow: 0 0 12px rgba(138, 77, 255, 0.45) !important;
+}
+
+/* === Buttons: No Boxes, Clean Accent Text === */
+.emby-button,
+.emby-button-foreground {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    color: var(--accent-color) !important;
+}
+
+/* === Button Hover: Subtle shimmer === */
+.emby-button:hover,
+.emby-button-foreground:hover {
+    color: var(--accent-color-light) !important;
+    text-shadow: 0 0 6px rgba(77, 166, 255, 0.4);
+}
